@@ -1,0 +1,42 @@
+<div class="dataTables_wrapper form-inline no-footer">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="dataTables_length">
+                <label>
+                    Show
+                    <select class="input-sm" ng-model="params.limit"
+                            ng-options="s for s in limits" ng-click="changeLimit()"></select>
+                    records
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div ng-transclude></div>
+
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            Show
+            {{ params.offset }}
+            to
+            {{ params.offset + params.limit }}
+            of
+            {{ params.total }}
+            records
+        </div>
+        <div class="col-xs-6 col-md-6">
+            <pagination class="pagination-sm pull-right"
+                        first-text="<<"
+                        last-text=">>"
+                        previous-text="<"
+                        next-text=">"
+                        total-items="params.total"
+                        ng-model="params.currentPage"
+                        max-size="params.indices"
+                        items-per-page="params.limit"
+                        boundary-links="true"
+                        rotate="false">
+            </pagination>
+        </div>
+    </div>
+</div>

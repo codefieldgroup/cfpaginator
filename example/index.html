@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="project">
+<head>
+    <title>CF Panginator Directive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="row marketing">
+
+        <div ng-controller="PaginatorController">
+
+            <!-- START Block Grind. -->
+            <div cfpaginator on="years_grid_listener" indices="5" limit="10">
+                <table class="table table-responsive table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Count</th>
+                        <th>ID</th>
+                        <th>Year</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="year in years">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ year.id }}</td>
+                        <td>{{ year.year }}</td>
+                        <td>
+                            <a class="red" href="" ng-click="remove($index)" title="Remove">Remove</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- END Block Grind. -->
+
+        </div>
+
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="bower_components/angularjs/angular.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="app/app.js"></script>
+<script src="../dist/cfpaginator.js"></script>
+</body>
+</html>

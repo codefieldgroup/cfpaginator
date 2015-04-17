@@ -1,0 +1,34 @@
+{
+  "name": "cfpaginator",
+  "version": "0.1.0",
+  "authors": [
+    "CF <cfcoregroup@gmail.com>"
+  ],
+  "main": [
+    "app/cfpaginator.js"
+  ],
+  "keywords": [
+    "angular",
+    "angular-ui",
+    "bootstrap"
+  ],
+  "description": "CFPaginator to AngularJS. Is a simple directive to include pagination to any element we need with paginations.",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "angularjs": "~1.3.13",
+    "bootstrap": "~3.3.2",
+    "angular-bootstrap": "~0.12.0"
+  }
+}
